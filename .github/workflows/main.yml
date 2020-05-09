@@ -32,7 +32,11 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }} 
-      
+     
+     #Setup checking for insecure components (using Snyk)
+      -   name: Snyk
+          uses: snyk/actions@0.1.1
+
       # Run dotnet build and publish
       - name: dotnet build and publish
         run: |
