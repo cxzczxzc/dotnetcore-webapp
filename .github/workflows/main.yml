@@ -36,6 +36,8 @@ jobs:
      #Setup checking for insecure components (using Snyk)
       -   name: Snyk
           uses: snyk/actions@0.1.1
+          env:
+              SNYK_TOKEN: ${{ secrets.snyk_secret }}
 
       # Run dotnet build and publish
       - name: dotnet build and publish
